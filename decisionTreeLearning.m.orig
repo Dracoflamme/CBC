@@ -1,10 +1,16 @@
+<<<<<<< HEAD
 function [tree] = decisionTreeLearning(examples, attributes, binary_targets)
     tree = decisionTreeLearning2(examples, attributes, binary_targets, 0);
 end
 
 function [tree] = decisionTreeLearning2(examples, attributes, binary_targets, depth)
     tree = struct('op', 0,'kids', [],'class', 0, 'depth', depth);
+    %if all members of binary_targets are equal return leaf node
+=======
+function [tree] = decisionTreeLearning(examples, attributes, binary_targets, depth)
+    tree = struct('op', [],'kids', [],'class', 0);
     % if all members of binary_targets are equal return leaf node
+>>>>>>> origin/master
     if all (binary_targets == binary_targets(1))
         tree.class = binary_targets(1);
         return
