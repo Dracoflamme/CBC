@@ -8,5 +8,6 @@ function [ rate ] = classificationRate(predictions, y )
             rate = rate + 1;
         end
     end
+    rate = rate/length(predictions)
 end
 
