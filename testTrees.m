@@ -1,10 +1,10 @@
 function [ predictions ] = testTrees(trees, examples)
 %UNTITLED Summary of this function goes here
 %   Detailed explanation goes here
-predictions = zeros(length(examples));
-size = length(examples);
-for j = 1:size
-    example = examples(:, j);
+predictions = zeros(length(examples), 1);
+len = size(examples,1);
+for j = 1:len
+    example = examples(j, :);
     discriminants = zeros(6);
     for i = 1:6
         tree = classify(trees(i), example);
@@ -22,25 +22,24 @@ function [tree2] = classify(tree, example)
         return
     end
     attribute = example(tree.op);
-    tree2 = classify(tree.kids(attribute), example);
+    tree2 = classify(tree.kids{attribute + 1}, example);
 end
 
 function [i] = getIndexOfMax(array)
     size = length(array);
-    position = (1);
-    value = (array(1));
+    positions = (1);
+    value = array(1);
     for j = 2:size
         if (array(j) > value)
-            position = (j);
-            value = (array(j));
+            positions = (j);
+            value = array(j);
         elseif (array(j) == value)
-            position(length(position) + 1) = j;
-            value(length(value) + 1) = array(j);
+            positions(length(positions) + 1) = j;
         end
     end
-    if (length(value) == 1)
-        i = position;
+    if (length(positions) == 1)
+        i = positions(1);
     else
-        i = value(rand(1) * length(value));
+        i = positions(randi(length(positions)));
     end
 end

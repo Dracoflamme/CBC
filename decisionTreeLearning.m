@@ -14,7 +14,6 @@ function [tree] = decisionTreeLearning2(examples, attributes, binary_targets, de
         return
     else 
         best_attribute = chooseBestDecisionAttribute(examples, attributes, binary_targets);
-        tree.op = best_attribute;
         for i = 0:1,
             examples_a = []; targets_a = [];
             % this is correct (apart from best_attribute maybe)
@@ -34,8 +33,9 @@ function [tree] = decisionTreeLearning2(examples, attributes, binary_targets, de
                 else    kid2 = decisionTreeLearning2(examples_a, attributes(attributes~=best_attribute), targets_a, depth + 1);
                 end
             end
-       end
-       tree.kids = {kid1 kid2};
+        end
+        tree.op = best_attribute;
+        tree.kids = {kid1 kid2};
     end 
 end
 
