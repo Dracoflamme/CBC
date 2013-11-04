@@ -3,7 +3,7 @@ function [ bin_mat ] = conf2bin( class, confusion_matrix )
 %   Detailed explanation goes here
     %creates new binary confusion matrix like in page 13 of spec
     %     
-    bin_mat = zeros(2,2,'uint8');
+    bin_mat = zeros(2,2,'uint32');
     %max dimension of confusion matrix
     conf_mat_dim = length(confusion_matrix(:,1));
     for row = 1:conf_mat_dim
