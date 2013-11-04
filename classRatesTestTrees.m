@@ -1,7 +1,8 @@
-function [rates] = classRatesTestTrees(dataset)
-   folds = createFoldDecisionTrees(dataset.x,dataset.y);
+function [rates] = classRatesTestTrees(x, y)
+   folds = createFoldDecisionTrees(x,y);
    for i = 1:length(folds)
         test = testTrees(folds(i).trees,folds(i).test.examples);
         rates(i) = classificationRate(test,folds(i).test.labels);
    end
+   rate = mean(rates)
 end
