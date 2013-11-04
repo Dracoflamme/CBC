@@ -9,7 +9,7 @@ function [ data ] = fold( examples , labels )
     for i = 1:10
        start  = jump*(i-1) + 1; %1,101,201,
        finish = jump*(i); %100,200,300
-       if (i==9) finish = num_exs;
+       if (i==10) finish = num_exs; %ensure we train on all data
         end
        data.test(i).labels = labels(start:finish-validation_size);
        data.test(i).examples = examples(start:finish-validation_size,:);
