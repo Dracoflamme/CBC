@@ -6,4 +6,3 @@ function [ measure ] = F1(class, predictions, y )
     measure = 2*(precision*recall)/(precision+recall);
 
 end
-
