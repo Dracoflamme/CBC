@@ -16,7 +16,7 @@ function [ data ] = fold( examples , labels )
        data.train(i).labels = cat(1,labels(1:start),labels(finish+1:end));
        data.train(i).examples = cat(1,examples(1:start,:),examples(finish+1:end,:));
        data.validate(i).labels = labels(finish-validation_size+1:finish);
-       data.validate(i).examples = examples(finish-validation_size+1:finish);
+       data.validate(i).examples = examples(finish-validation_size+1:finish,:);
     end
 
 end
