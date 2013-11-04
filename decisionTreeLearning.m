@@ -1,6 +1,6 @@
 function [tree] = decisionTreeLearning(examples, attributes, binary_targets, depth)
     tree = struct('op', [],'kids', [],'class', 0);
-    %if all members of binary_targets are equal return leaf node
+    % if all members of binary_targets are equal return leaf node
     if all (binary_targets == binary_targets(1))
         tree.class = binary_targets(1);
         return

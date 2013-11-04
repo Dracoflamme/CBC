@@ -4,6 +4,5 @@ function [ rate ] = classificationRate( predictions, y )
 %   true negatives as a proportion of the total number of examples
     m = createConfusionMatrix(predictions, y);
     rate = (m(1,1) + m(2,2))/length(predictions);
-
 end
 
