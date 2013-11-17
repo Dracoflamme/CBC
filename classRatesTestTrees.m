@@ -4,5 +4,4 @@ function [rates] = classRatesTestTrees(x, y)
         test = testTrees(folds(i).trees,folds(i).test.examples);
         rates(i) = classificationRate(test,folds(i).test.labels);
    end
-   rate = mean(rates)
 end
