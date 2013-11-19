@@ -1,5 +1,14 @@
 function [ output ] = bestMatch(inputs)
-    output = zeros(size(inputs));
+    if (size(inputs, 1) == 6)
+        output = zeros(size(inputs));
+    else
+       tmp = zeros(6, size(cell2mat(inputs(1)),2));
+       output = zeros(size(tmp));
+       for i = 1:6
+           tmp(i, :) = cell2mat(inputs(i));
+       end
+       inputs = tmp;
+    end
     for example = 1:size(inputs,2)
        bestAtt = 1;
        value = inputs(1,example);
@@ -18,4 +27,3 @@ function [ output ] = bestMatch(inputs)
        end
     end
 end
-
