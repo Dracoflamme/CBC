@@ -13,7 +13,7 @@ function [ network ] = createNN( hidden_layers,training_fn, epochs, examples,lab
     if strcmp(one_or_six, 'one')
         network = makeNN(hidden_layers,training_fn,epochs,x2,y2);
     else
-        network = cell(6);
+        network = cell(1, 6);
         for i = 1:6
             ts = getBinaryTargets(labels,i);
             network{i} = makeNN(hidden_layers,training_fn,epochs,x2,ts');
