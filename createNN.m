@@ -25,6 +25,6 @@ function [net] = makeNN(hidden_layers,train_fn,epochs,x,y)
     [net] = feedforwardnet(hidden_layers,train_fn);
     [net] = configure(net,x,y);
     net.trainParam.epochs = epochs;
-    [net] = train(net,x,y);
+    [net] = train(net,x,y,'useParallel','yes','useGPU','only');
 end
 
