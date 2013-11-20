@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration target="target.ezdeploy.standalone" target-name="MATLAB Compiler for Standalone Applications" name="my_task" location="C:\Users\Conrad\Documents\MATLAB\CBC" file="C:\Users\Conrad\Documents\MATLAB\CBC\my_task.prj">
+  <configuration target="target.ezdeploy.standalone" target-name="MATLAB Compiler for Standalone Applications" name="my_task" location="C:\Users\William\Dropbox\GitHub\CBC" file="C:\Users\William\Dropbox\GitHub\CBC\my_task.prj">
     <param.appname>my_task</param.appname>
     <param.authnamewatermark />
     <param.email />
@@ -43,7 +43,7 @@
     <param.net.tsa.namespace>my_task</param.net.tsa.namespace>
     <param.net.tsa.superclass />
     <param.net.tsa.metadata />
-    <param.net.tsa.metadata.assembly>C:\Users\Conrad\Documents\MATLAB</param.net.tsa.metadata.assembly>
+    <param.net.tsa.metadata.assembly>C:\Users\William\Dropbox\MATLAB</param.net.tsa.metadata.assembly>
     <param.create.log>false</param.create.log>
     <param.log.file />
     <unset>
@@ -95,8 +95,8 @@
     <fileset.resources />
     <fileset.package />
     <build-deliverables>
-      <file name="readme.txt" location="${PROJECT_ROOT}\my_task\for_testing" optional="true">C:\Users\Conrad\Documents\MATLAB\CBC\my_task\for_testing\readme.txt</file>
-      <file name="my_task.exe" location="${PROJECT_ROOT}\my_task\for_testing" optional="false">C:\Users\Conrad\Documents\MATLAB\CBC\my_task\for_testing\my_task.exe</file>
+      <file name="my_task.exe" location="${PROJECT_ROOT}\my_task\for_testing" optional="false">C:\Users\William\Dropbox\GitHub\CBC\my_task\for_testing\my_task.exe</file>
+      <file name="readme.txt" location="${PROJECT_ROOT}\my_task\for_testing" optional="true">C:\Users\William\Dropbox\GitHub\CBC\my_task\for_testing\readme.txt</file>
     </build-deliverables>
     <workflow />
     <matlab>
