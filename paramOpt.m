@@ -18,8 +18,7 @@ function [ topology, train_fn,learn_rate,momentum,activation_fn, epoch] = paramO
                             count = count+1
                             network = createNN(topologies{top},training_fns{tra},learn_rates(le),momentums(mom),activation_fns{act},epochs(ep),x,y,one_or_six);                   
                             examples = validation_data.examples;
-                            out = sim(network,examples');
-                            test = NNout2labels(out);
+                            test = testANN(network,examples');
                             labels = validation_data.labels;
                             accuracy = classificationRate(test,labels);
                             if accuracy > max_acc
