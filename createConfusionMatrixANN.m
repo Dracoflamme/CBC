@@ -1,4 +1,4 @@
-function [ cm] = crossValidateANN( labels, examples,params)
+function [ cm] = createConfusionMatrixANN( labels, examples,params, one_or_six)
     folds = fold(labels,examples);
     cm = zeros(6, 6, 'uint32');
     topology = params{1};
