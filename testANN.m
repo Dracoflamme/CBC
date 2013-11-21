@@ -7,7 +7,6 @@ function [ expected ] = testANN( network, data )
             output{i} = sim(network{i}, data);
         end
     end
-    corrected = bestMatch(output);
-    expected = NNout2labels(corrected);
+    expected = NNout2labels(output);
 end
 
