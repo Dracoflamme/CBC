@@ -2,7 +2,7 @@ function [ rates ] = crossValidateANN( labels, examples, one_or_six,optimise_par
     folds = fold(labels,examples);
     rates = zeros(length(folds));
     if strcmp(optimise_parameters,'yes')
-        [topology,train_fn,learn_rate,momentum,activation_fn,epochs] = paramOpt(folds.train(1),folds.validate(1));
+        [topology,train_fn,learn_rate,momentum,activation_fn,epochs] = paramOpt(folds.train(1),folds.validate(1),one_or_six);
     else
         topology = params{1};
         train_fn = params{2};
