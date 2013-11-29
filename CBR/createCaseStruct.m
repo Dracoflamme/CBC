@@ -4,6 +4,6 @@ function [ case_struct ] = createCaseStruct( active_aus, label )
 % contains the vector of active activation units, and solution which
 % contains the corresponding label, between 1 and 6 or 0 if no known label
 % exists
-    case_struct = struct('problem_description',active_aus,'solution',label);
+    case_struct = struct('problem_description',active_aus, 'solution',label, 'typicality', 0);
 end
 
