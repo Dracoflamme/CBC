@@ -3,15 +3,17 @@ function [ solvedcase ] = reuse( cs, newcase )
 %   Detailed explanation goes here
     best_attribute = [0 0 0 0 0 0];
     for i = 1:length(cs)
-        best_attribute(knns(i).solution) = best_attribute(knns(i).solution+1);
+        best_attribute(cs(i).solution) = best_attribute(cs(i).solution)+1;
     end
-    best = 1;
+    best = best_attribute(1);
+    bestIndex = 1;
     for i = 1:6
         current = best_attribute(i);
         if current>best
             best = current;
+            bestIndex = i;
         end
     end
-    solvedcase = createCaseStruct(newcase.problem_description,best);
+    solvedcase = createCaseStruct(newcase.problem_description,bestIndex);
 end
 
