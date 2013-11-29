@@ -4,9 +4,11 @@ function [ output ] = getCase( target, cases )
     casesLength = length(cases);
     for i = 1:casesLength
         c = cases(i);
-        if (all(c.problem_description == target.problem_description) && (c.solution == target.solution))
-            output = i;
-            return
+        if (length(c.problem_description) == length(target.problem_description))
+            if (all(c.problem_description == target.problem_description) && (c.solution == target.solution))
+                output = i;
+                return
+            end
         end
     end
     output = 0;
