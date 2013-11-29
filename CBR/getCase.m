@@ -5,7 +5,7 @@ function [ output ] = getCase( target, cases )
     for i = 1:casesLength
         c = cases(i);
         if (all(c.problem_description == target.problem_description) && (c.solution == target.solution))
-            output = c;
+            output = i;
             return
         end
     end
