@@ -3,7 +3,7 @@ function [ cbr ] = CBRinit(x, y)
 %   Detailed explanation goes here
     cbr = [];
     for auv = 1:length(x)
-        active_aus = toAU(x(:,auv));
+        active_aus = toAU(x(auv,:));
         label = y(auv);
         c = createCaseStruct(active_aus,label);
         cbr = addCase(c,cbr);
