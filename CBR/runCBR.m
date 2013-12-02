@@ -15,4 +15,3 @@ function [ predictions ] = runCBR(cbr, learning_aus)
        cbr = retain(cbr, solvedCase);
     end
 end
-

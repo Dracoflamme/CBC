@@ -1,4 +1,4 @@
-function [ sim ] = similarity1(case1,case2)
+function [ sim ] = similarity2(case1,case2)
 %simali
 %   Detailed explanation goes here
     aus1 = fromAU(case1.problem_description);   
